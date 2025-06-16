@@ -1,0 +1,13 @@
+#CodeIgniter
+vendor/
+.env
+*.log
+
+#Editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Docker
+*.pid
+node_modules/
