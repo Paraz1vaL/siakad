@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Presensi</title>
+</head>
+<body>
+    <h1>Edit Presensi</h1>
+    <form action="<?php echo site_url('presensi/edit/'.$presensi->id_presensi); ?>" method="post">
+        <label for="id_jadwal">Jadwal:</label>
+        <select name="id_jadwal" required>
+            <?php foreach ($jadwal as $j): ?>
+                <option value="<?php echo $j->id_jadwal; ?>" <?php echo ($j->id_jadwal == $presensi->id_jadwal) ? 'selected' : ''; ?>><?php echo $j->nama_mapel . ' - ' . $j->hari . ' ' . $j->jam . ' - ' . $j->nama_kelas; ?></option>
+            <?php endforeach; ?>
+        </select><br>
+
+        <label for="nim">NIM:</label>
+        <input type="text" name="nim" value="<?php echo $presensi->nim; ?>" required><br>
+
+        <label for="tanggal">Tanggal:</label>
+        <input type="date" name="tanggal" value="<?php echo $presensi->tanggal; ?>" required><br>
+
+        <label for="status">Status:</label>
+        <select name="status" required>
+            <option value="Hadir" <?php echo ($presensi->status == 'Hadir') ? 'selected' : ''; ?>>Hadir</option>
+            <option value="Izin" <?php echo ($presensi->status == 'Izin') ? 'selected' : ''; ?>>Izin</option>
+            <option value="Sakit" <?php echo ($presensi->status == 'Sakit') ? 'selected' : ''; ?>>Sakit</option>
+            <option value="Alpa" <?php echo ($presensi->status == 'Alpa') ? 'selected' : ''; ?>>Alpa</option>
+        </select><br>
+
+        <label for="keterangan">Keterangan:</label>
+        <textarea name="keterangan"><?php echo $presensi->keterangan; ?></textarea><br>
+
+        <input type="submit" value="Simpan">
+    </form>
+</body>
+</html>
