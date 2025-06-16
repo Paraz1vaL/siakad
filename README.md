@@ -18,6 +18,16 @@ Proyek ini adalah Sistem Informasi Akademik (SIAKAD) berbasis web yang dikembang
 
 ---
 
+## LOGIN
+- Admin 
+    - username : admin
+    - password : admin
+- keuangan
+    - username  : tu
+    - password : tu
+- guru
+    -sesuai saat di daftarkan
+
 ## 📦 Struktur Proyek
 
 ```bash
